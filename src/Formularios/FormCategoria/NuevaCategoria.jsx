@@ -3,7 +3,6 @@ import TextField from '@mui/material/TextField';
 import styled from "styled-components";
 import Botones from "../../Components/Botones/Botones";
 import DataTable from "../DataTable/DataTable";
-import { v4 as uuid } from 'uuid';
 
 import { useState } from "react";
 import { validarTitulo, validarDescripcion } from "../FormVideo/validaciones";

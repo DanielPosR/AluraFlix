@@ -137,9 +137,13 @@ function App() {
 
   function eliminarCategoria(id) {
 
-    const nuevoCategorias = categorias.filter((categoria) => categoria.id !== id)
+    const resultado = window.confirm('¿Deseas eliminar esta categoría y los videos en ella?');
 
-    setCategorias(nuevoCategorias)
+    if (resultado) {
+      const nuevoCategorias = categorias.filter((categoria) => categoria.id !== id)
+
+     return setCategorias(nuevoCategorias)
+    }
   }
 
 
