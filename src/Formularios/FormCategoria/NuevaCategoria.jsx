@@ -95,19 +95,17 @@ const NuevaCategoria = ({ categorias, guardarCategoria, eliminarCategoria }) => 
 
 
     function editarCategoria(idTabla) {
+
+        alert('¡¡IMPORTANTE!! Si modifícas el nombre de la categoria se perderán los videos guardados.')
+
         const categoriaSeleccionada = categorias.filter(categoria => categoria.id === idTabla);
 
         const { colorPrimario, descripcion, titulo } = categoriaSeleccionada[0];
 
+        setTitulo({ value: titulo });
+        setDescripcion({ value: descripcion });
+        setColorPrimario({ value: colorPrimario });
 
-
-        const resultado = window.confirm('¡¡IMPORTANTE!! Si modifícas el nombre de la categoria se perderán los videos guardados.')
-
-        if (resultado) {
-            setTitulo({ value: titulo });
-            setDescripcion({ value: descripcion });
-            setColorPrimario({ value: colorPrimario });
-        }
 
         eliminarCategoria(idTabla)
     }
