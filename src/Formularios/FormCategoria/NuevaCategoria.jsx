@@ -99,11 +99,17 @@ const NuevaCategoria = ({ categorias, guardarCategoria, eliminarCategoria }) => 
 
         const { colorPrimario, descripcion, titulo } = categoriaSeleccionada[0];
 
-        setTitulo({ value: titulo });
-        setDescripcion({ value: descripcion });
-        setColorPrimario({ value: colorPrimario });
 
-        eliminarCategoria(idTabla);
+
+        const resultado = window.confirm('¡¡IMPORTANTE!! Si modifícas el nombre de la categoria se perderán los videos guardados.')
+
+        if (resultado) {
+            setTitulo({ value: titulo });
+            setDescripcion({ value: descripcion });
+            setColorPrimario({ value: colorPrimario });
+        }
+
+        eliminarCategoria(idTabla)
     }
 
     return (
